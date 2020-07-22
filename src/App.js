@@ -12,20 +12,40 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
+
   state = {
     activeTab: 'add',
     items: []
   }
 
+  onClickTabAdd = () => {
+    this.setState({
+      activeTab: 'add'
+    });
+  }
+
+  onClickTabList = () => {
+    this.setState({
+      activeTab: 'list'
+    });
+  }
+
+  onClickTabPay = () => {
+    this.setState({
+      activeTab: 'pay'
+    });
+  }  
+
   render() {
     return (
-      <div>
+      <div className='container mt-5'>
+        <Button label='Add' onClick={this.onClickTabAdd}/>
+        <Button label='List' onClick={this.onClickTabList}/>
+        <Button label='Pay' onClick={this.onClickTabPay}/>
         <Add />
-        <List />
-        <Pay />
-        <Button label='Add' />
-        <Button label='List' />
-        <Button label='Pay' />
+        {/* <List />
+        <Pay /> */}
+        <p>{this.state.activeTab}</p>
       </div>
     );
   }

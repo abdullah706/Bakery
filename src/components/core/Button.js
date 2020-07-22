@@ -4,7 +4,7 @@ class Button extends React.Component {
 
     render() {
         return (
-            <button className='btn btn-primary'>{this.props.label}</button>
+            <button className='btn btn-outline-primary' onClick={this.props.onClick}>{this.props.label}</button>
         )
     }
 
