@@ -17,14 +17,29 @@ class Add extends React.Component {
         })
     }
 
+    handleInput = (event) => { //méthode pour gérer l'event onChange de l'input
+        this.setState({
+            input: event.target.value
+        });
+    }
+
+    onSubmit = () => {
+        console.log('price: ', this.state.price);
+        console.log('input: ', this.state.input);
+        this.setState({
+            price: 1,
+            input: ''
+        })
+    }
+
     render() {
         return (
             // Code pris du site de Bootstrap
             <div>
                 <div className="input-group mb-3 mt-3">
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" onChange={(event) => this.handleInput(event)} value={this.state.input} />
                     <div className="input-group-append mb-3">
-                        <button className="btn btn-outline-primary" type="button">Button</button>
+                        <button className="btn btn-outline-primary" type="button" onClick={this.onSubmit}>Button</button>
                     </div>
                 </div>
                 <div>{this.state.price} €</div>
