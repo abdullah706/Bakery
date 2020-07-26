@@ -4,7 +4,13 @@ class List extends React.Component {
 
     render() {
         return (
-            <div>list</div>
+            <div>list
+                <ul>{this.props.items.map((item) =>
+                {
+                    return <li>{item.name}: {item.price} euros</li>
+                })}
+                </ul>
+            </div>
         )
     }
 

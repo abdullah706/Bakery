@@ -11,7 +11,7 @@ class Add extends React.Component {
         max: 10
     }
 
-    onChangePrice = (val) => {
+   onChangePrice = (val) => {
         this.setState({
             price: val
         })
@@ -24,13 +24,9 @@ class Add extends React.Component {
     }
 
     onSubmit = () => {
-        console.log('price: ', this.state.price);
-        console.log('input: ', this.state.input);
-        this.setState({
-            price: 1,
-            input: ''
-        })
+        this.props.add(this.state.price, this.state.input);
     }
+   
 
     render() {
         return (
