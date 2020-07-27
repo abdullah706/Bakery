@@ -5,7 +5,7 @@ import specimen from '../../specimen.jpg';
 class Card extends Component {
 
     state = {
-        source: specimen
+        source: specimen // image initiale (specimen.jpg) avant fetch
     }
 
     componentDidMount() {
@@ -14,11 +14,14 @@ class Card extends Component {
              .then(json => {
                  console.log('Fetched: ', json)
                 this.setState(json)
-             });
+             }); // On modifie l'image du state grâce à fetch
     }
 
+//     Dans le onClickFn de Card, mettre une méthode anonyme qui envoie directement le price. C’est une autre manière de faire remonter les informations
+// Pour passer à l’étape suivante, vérifier que chaque clic sur un bouton Card affiche un message dans la console
+
     render() {
-        return <button>
+        return <button >
              <img style={{height: '200px', width: '200px'}} src={this.state.source}/>
             </button>
     }

@@ -56,9 +56,8 @@ class App extends React.Component {
         <Button label='Pay' onClick={this.onClickTabPay}/>
         <Add add={this.onAdd}/>
         <List items={this.state.items}/>
-        <Card />
-        {/* <List />
-        <Pay /> */}
+        {/* <Card /> */}
+        <Pay items={this.state.items}/>
         <p>{this.state.activeTab}</p>
       </div>
     );
